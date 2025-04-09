@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Матвей – мировая звезда стриптиз-клубов для парней, икона ночной сцены">
-  <title>Матвей – Легенда Стриптиза</title>
-   <style>
+  <meta name="description" content="Матвей – мировая звезда стритиз-клубов и архив противоречий">
+  <title>Матвей – Легенда и Архив</title>
+  <style>
     @font-face {
       font-family: 'BinnerDi';
       src: url('font/ofont.ru_BinnerDi_1.woff') format('truetype');
+      font-display: swap;
     }
     @font-face {
       font-family: 'Copperplate';
       src: url('font/ofont.ru_Copperplate.woff') format('truetype');
+      font-display: swap;
     }
-    @import url('https://fonts.googleapis.com/css2?family=PT+Mono&family=Russo+One&display=swap');
 
     * {
       margin: 0;
@@ -23,30 +24,18 @@
       scroll-behavior: smooth;
     }
     
-    footer {
-        background-color: #222;
-        color: #fff;
-        text-align: center;
-        padding: 5px 0;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        font-size: 40px;
-    }
-
     body {
       font-family: 'Copperplate', Arial, sans-serif;
       background-color: #1a1a1a;
       color: #fff;
-      line-height: 1;
       font-size: 20px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
       text-align: center;
       min-height: 100vh;
-      padding: 0 15px;
+      padding: 0 15px 60px;
+      line-height: 1;
     }
     
     a {
@@ -54,76 +43,7 @@
       text-decoration: none;
     }
 
-    header {
-      background-color: rgba(0, 0, 0, 0.7);
-      color: #FF66CC;
-      padding: 50px 30px;
-      text-align: center;
-      text-shadow: 2px 2px 10px rgba(255, 0, 102, 1);
-      width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 5px 30px rgba(255, 0, 102, 0.7);
-      animation: fadeIn 1.5s ease-out;
-    }
-
-    h1 {
-      font-family: 'BinnerDi', sans-serif;
-      font-size: 6rem;
-      font-weight: bold;
-      color: #FF66CC;
-      text-transform: uppercase;
-      text-shadow: 0px 4px 12px rgba(255, 0, 102, 0.8);
-    }
-
-    header p {
-      font-size: 1.8rem;
-      font-style: italic;
-      color: #ddd;
-      margin-top: 10px;
-    }
-
-    section {
-      max-width: 1200px;
-      background-color: rgba(38, 38, 38, 0.9);
-      border-radius: 15px;
-      padding: 25px;
-      margin: 20px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
-      animation: fadeIn 1s ease-out;
-      font-family: 'Copperplate', Arial, sans-serif;
-      width: 95%;
-    }
-
-    section h2 {
-      font-size: 3.5rem;
-      color: #FF66CC;
-      margin-bottom: 20px;
-      text-shadow: 0px 2px 8px rgba(255, 0, 102, 0.8);
-    }
-
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 колонки */
-      gap: 20px;
-      justify-content: center;
-      margin: 10px auto;
-      animation: fadeIn 1s ease-out;
-    }
-    
-    .image-grid img {
-      width: 100%;
-      aspect-ratio: 1/0.8;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 0, 102, 1);
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-    }
-
-    .image-grid img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(255, 0, 102, 1);
-    }
-
+    /* Music Prompt */
     #musicPrompt {
       position: fixed;
       top: 0;
@@ -139,194 +59,456 @@
       z-index: 2000;
       font-family: 'Copperplate', Arial, sans-serif;
       text-align: center;
+      padding: 20px;
     }
 
     #musicPrompt h1 {
-      font-size: 3.5rem;
+      font-size: clamp(1.8rem, 5vw, 3.5rem);
       color: #FF66CC;
-      text-shadow: 0px 0px 15px rgba(255, 0, 102, 0.8);
+      text-shadow: 0 0 15px rgba(255, 0, 102, 0.8);
       margin-bottom: 20px;
     }
 
     #musicPrompt p {
-      font-size: 1.5rem;
+      font-size: clamp(1rem, 3vw, 1.5rem);
       margin-bottom: 15px;
+      max-width: 800px;
     }
 
     #musicPrompt button {
       background-color: #FF66CC;
       color: white;
-      font-size: 1.5rem;
-      padding: 20px 40px;
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      padding: clamp(12px, 4vw, 20px) clamp(25px, 6vw, 40px);
       border: none;
       cursor: pointer;
       border-radius: 8px;
-      transition: background-color 0.3s ease-in-out;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
     }
 
     #musicPrompt button:hover {
       background-color: #FF3399;
     }
 
-    /* Анимация появления */
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .tab-button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: clamp(10px, 3vw, 15px) clamp(15px, 4vw, 30px);
+      cursor: pointer;
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-family: 'BinnerDi', sans-serif;
+      flex: 1 1 auto;
+      max-width: 300px;
+    }
+    
+    .tab-button.active {
+      background-color: #FF66CC;
+    }
+    
+    .tab-content {
+      display: none;
+      width: 100%;
+      max-width: 1200px;
+      animation: fadeIn 1s ease-out;
+    }
+    
+    .tab-content.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Header */
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #FF66CC;
+      padding: clamp(30px, 8vw, 50px) clamp(15px, 4vw, 30px);
+      text-align: center;
+      text-shadow: 2px 2px 10px rgba(255, 0, 102, 1);
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 5px 30px rgba(255, 0, 102, 0.7);
+      animation: fadeIn 1.5s ease-out;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'BinnerDi', sans-serif;
+      font-size: clamp(2.5rem, 10vw, 6rem);
+      font-weight: bold;
+      color: #FF66CC;
+      text-transform: uppercase;
+      text-shadow: 0 4px 12px rgba(255, 0, 102, 0.8);
+    }
+
+    header p {
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-style: italic;
+      color: #ddd;
+      margin-top: 10px;
+    }
+
+    /* Sections */
+    section {
+      width: 100%;
+      background-color: rgba(38, 38, 38, 0.9);
+      border-radius: 15px;
+      padding: clamp(15px, 4vw, 25px);
+      margin: 20px 0;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+      animation: fadeIn 1s ease-out;
+      font-family: 'Copperplate', Arial, sans-serif;
+    }
+
+    section h2 {
+      font-size: clamp(1.8rem, 6vw, 3.5rem);
+      color: #FF66CC;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 8px rgba(255, 0, 102, 0.8);
+    }
+
+    section p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+      font-size: clamp(1rem, 3vw, 1.25rem);
+    }
+
+    /* Image Grid */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 10px auto;
+      animation: fadeIn 1s ease-out;
+      width: 100%;
+    }
+    
+    .image-grid img {
+      width: 100%;
+      aspect-ratio: 1/0.8;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 0, 102, 1);
+      transition: transform 0.3s ease, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .image-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 0, 102, 1);
+    }
+
+    /* Archive Styles */
+    .archive .container {
+      width: 100%;
+      padding: 0;
+    }
+    
+    .archive .quote-block {
+      background-color: rgba(0, 0, 0, 0.3);
+      border-left: 4px solid #FF66CC;
+      padding: 20px;
+      margin: 15px 0;
+      text-align: left;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .archive .quote-block p {
+      font-size: clamp(1rem, 3vw, 1.4rem);
+      margin-bottom: 10px;
+    }
+    
+    .archive .quote-block small {
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      color: #aaa;
+      font-style: italic;
+    }
+    
+    .archive .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+    
+    .archive .gallery-item {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(255, 0, 102, 0.5);
+      transition: transform 0.3s ease;
+      background: rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+    
+    .archive .gallery-item:hover {
+      transform: scale(1.03);
+    }
+    
+    .archive .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    
+    .archive .gallery-item p {
+      padding: 15px;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: clamp(15px, 3vw, 20px) 0;
+      width: 100%;
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+
+    /* Animations */
     @keyframes fadeIn {
-      0% {
+      from {
         opacity: 0;
         transform: translateY(30px);
       }
-      100% {
+      to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
-    /* Отзывы на мобильные устройства */
-    @media (max-width: 780px) {
-      body {
-        padding: 10px;
-      }
-
-      header {
-        padding: 40px 20px;
-      }
-
-      h1 {
-        font-size: 4rem;
-      }
-
-      section h2 {
-        font-size: 2.5rem;
-      }
-
-      .image-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 колонки для мобильных */
-        gap: 20px;
-      }
-
-      .image-grid img {
-        width: 100%;
-        border-radius: 8px;
-      }
-
-      #musicPrompt h1 {
-        font-size: 2.5rem;
-      }
-
-      #musicPrompt p {
-        font-size: 1.2rem;
-      }
-
-      #musicPrompt button {
-        font-size: 1.2rem;
-        padding: 15px 30px;
-      }
-
-      section {
-        padding: 15px;
-        margin: 10px 0;
-      }
-
-      header p {
-        font-size: 1.5rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
+    /* Modal Gallery */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      overflow: auto;
     }
 
-    /* Отзывы на очень маленькие экраны */
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 3rem;
-      }
+    .modal-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 10px;
+    }
 
-      section h2 {
-        font-size: 2rem;
-      }
+    .modal-img {
+      max-width: 99%;
+      max-height: 8000vh;
+      object-fit: contain;
+    }
 
-      .image-grid {
-        grid-template-columns: repeat(2, 1fr); /* 1 колонка для мобильных */
-      }
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: #FF66CC;
+      font-size: 50px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-      #musicPrompt h1 {
-        font-size: 2rem;
-      }
-
-      #musicPrompt p {
-        font-size: 1rem;
-      }
-
-      #musicPrompt button {
-        font-size: 1rem;
-        padding: 12px 25px;
-      }
+    .caption {
+      color: #fff;
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      margin-top: 20px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-
-    <div id="musicPrompt">
+  <div id="musicPrompt">
     <h1>Переходя по этой ссылке вы автоматически приняли ислам и правила которые написаны тут</h1>
-    <p>ВСЕ СОВПАДЕНИЯ ЛИШЬ СОВПАДЕНИЯ И МАТВЕЙ О КОТОРОМ ИДЁТ РЕЧЬ ИМЕННО НА ЭТОМ САЙТЕ НИКОГДА НЕ СУЩЕСТВОВАЛО😘</p>
+    <p>ВСЕ СОВПАДЕНИЯ ЛИШЬ СОВПАДЕНИЯ И МАТВЕЙ О КОТОРОМ ИДЁТ РЕЧЬ ИМЕННО НА ЭТОМ САЙТЕ НИКОГДА НЕ СУЩЕСТВОВАЛ😘</p>
     <p>Я осуждаю все что тут написано, показано и воспроизведено</p>
     <button onclick="playMusic()">кнопка</button>
   </div>
   
-  <header>
-    <h1>Матвей Легенда Стриптиза</h1>
-    <p>Мировая звезда ночных клубов</p>
-  </header>
+  <div class="tabs">
+    <button class="tab-button active" onclick="openTab('striptease')">Легенда Стриптиза</button>
+    <button class="tab-button" onclick="openTab('archive')">Архив Матвея</button>
+  </div>
   
-  <b><p>︎︎</p></b>
-  <b><p>︎︎</p></b>
-  <b><p>︎︎</p></b>
-  
+  <!-- Striptease Tab -->
+  <div id="striptease" class="tab-content active">
+    <header>
+      <h1>Матвей Легенда Стриптиза</h1>
+      <p>Мировая звезда ночных клубов</p>
+    </header>
+    
+    <section>
+      <h2>История Матвея</h2>
+      <p>Матвей начинал с небольших клубов, но его талант быстро привлек внимание публики. Его уникальный стиль, харизма и пластика сделали его легендой индустрии.</p>
+      <p>Каждое его выступление это шоу, сочетающее элементы акробатики, театра и завораживающего танца. Его популярность росла стремительно, и вскоре его имя стало синонимом высочайшего уровня выступлений.</p>
+    </section>
 
-  <section>
-    <h2>История Матвея</h2>
-    <p>Матвей начинал с небольших клубов, но его талант быстро привлек внимание публики. Его уникальный стиль, харизма и пластика сделали его легендой индустрии.</p>
-    <p>Каждое его выступление — это шоу, сочетающее элементы акробатики, театра и завораживающего танца. Его популярность росла стремительно, и вскоре его имя стало синонимом высочайшего уровня выступлений.</p>
-  </section>
+    <section>
+      <h2>Фотогалерея</h2>
+      <div class="image-grid">
+        <img src="photo/photo1.jpg" alt="Матвей на сцене" loading="lazy" onclick="openModal(this)">
+        <img src="photo/photo2.jpg" alt="Матвей в движении" loading="lazy" onclick="openModal(this)">
+        <img src="photo/photo3.jpg" alt="Матвей звезда" loading="lazy" onclick="openModal(this)">
+        <img src="photo/photo4.jpg" alt="Матвей с фанатами" loading="lazy" onclick="openModal(this)">
+        <img src="photo/photo5.jpg" alt="Матвей в тренировке" loading="lazy" onclick="openModal(this)">
+        <img src="photo/photo6.jpg" alt="Матвей в клубе" loading="lazy" onclick="openModal(this)">
+      </div>
+    </section>
 
-  <section class="image-grid">
-    <img src="photo/photo1.jpg" alt="Матвей на сцене">
-    <img src="photo/photo2.jpg" alt="Матвей в движении">
-    <img src="photo/photo3.jpg" alt="Матвей звезда">
-    <img src="photo/photo4.jpg" alt="Матвей с фанатами">
-    <img src="photo/photo5.jpg" alt="Матвей в тренировке">
-    <img src="photo/photo6.jpg" alt="Матвей в клубе">
-  </section>
-
-  <section>
-    <h2>Результаты</h2>
+    <section>
+      <h2>Результаты</h2>
       <p>Победитель международного конкурса стриптизеров</p>
-      <p>︎︎︎</p>
       <p>Лучший артист года по версии Night Club Awards</p>
-      <p>︎︎</p>
       <p>Выступления в крупнейших клубах мира: Лас-Вегас, Токио, Берлин</p>
-      <p>︎︎︎</p>
       <p>Создание собственного элитного шоу-пространства</p>
-  </section>
+    </section>
 
-  <section>
-    <h2>Связаться с Матвеем</h2>
-    <p>Хотите заказать выступление Матвея или задать вопрос? ну нахуя это вам?</p>
-    <p>ТГК: <a href="https://t.me/Matvey955">t.me/Matvey955</a></p>
-  </section>
+    <section>
+      <h2>Связаться с Матвеем</h2>
+      <p>Хотите заказать выступление Матвея или задать вопрос? ну нахуя это вам?</p>
+      <p>ТГК: <a href="https://t.me/Matvey955">t.me/Matvey955</a></p>
+    </section>
+  </div>
   
-  <b><p>︎︎</p></b>
-  <b><p>︎︎</p></b>
-  <b><p>︎︎</p></b>
+  <!-- Archive Tab -->
+  <div id="archive" class="tab-content">
+    <header>
+      <h1>Архив цитат и противоречий</h1>
+    </header>
+    
+    <div class="container">
+      <section>
+        <h2>КТО ТАКОЙ МАТВЕЙ?</h2>
+        <div class="quote-block">
+          <p>Матвейчик уникальный человек. Человек, который умудряется менять свои принципы чаще, чем дышит.</p>
+          <small>— Из введения к архиву</small>
+        </div>
+        <p>Его философия проста: "Сегодня я думаю так, завтра вот так, а послезавтра вообще не помню".</p>
+      </section>
+      
+      <section>
+        <h2>ЗОЛОТЫЕ ЦИТАТЫ</h2>
+        <div class="quote-block">
+          <p>«Я никогда не изменяю своим принципам. Кроме тех случаев, когда это выгодно»</p>
+        </div>
+        <div class="quote-block">
+          <p>«Это не ложь, это альтернативная интерпретация правды»</p>
+        </div>
+      </section>
+      
+      <section>
+        <h2>Фоточки</h2>
+        <div class="image-grid">
+          <div class="gallery-item" onclick="openModal(this.querySelector('img'))">
+            <img src="photo/photo7.jpg" alt="Матвей на встрече с начальством" loading="lazy">
+            <p>Матвей в школе</p>
+          </div>
+          <div class="gallery-item" onclick="openModal(this.querySelector('img'))">
+            <img src="photo/photo8.jpg" alt="Тот же день, спустя 2 часа" loading="lazy">
+            <p>Тот же день, спустя 2 часа</p>
+          </div>
+          <div class="gallery-item" onclick="openModal(this.querySelector('img'))">
+            <img src="photo/photo9.jpg" alt="Пост в соцсетях в тот же вечер" loading="lazy">
+            <p>Пост в тгк в тот же вечер</p>
+          </div>
+        </div>
+      </section>
+      
+      <section>
+        <h2>ФАКТЫ О МАТВЕЕ</h2>
+        <div class="quote-block">
+          <p>• Может согласиться и не согласиться одновременно</p>
+          <p>• Рекорд — 3 противоположных мнения за 15 минут</p>
+          <p>• Его принципы имеют полураспад 12 часов</p>
+          <p>• Уверен, что все его помнят только хорошее</p>
+        </div>
+      </section>
+    </div>
+  </div>
+  
+  <!-- Modal Gallery -->
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <img id="modalImage" class="modal-img">
+      <div id="caption" class="caption"></div>
+    </div>
+  </div>
   
   <footer>
-      <p>©МАТВЕЙ 2025. Все права защищены</p>
+    <p>добраутра матвей😜</p>
   </footer>
 
-     <script>
-  function playMusic() {
-  document.getElementById("musicPrompt").style.display = 'none'; // Скрыть блок с выбором после нажатия 
-}
+  <script>
+    // Music prompt
+    function playMusic() {
+      document.getElementById("musicPrompt").style.display = 'none';
+    }
+    
+    // Tab switching
+    function openTab(tabName) {
+      const tabContents = document.querySelectorAll(".tab-content");
+      const tabButtons = document.querySelectorAll(".tab-button");
+      
+      tabContents.forEach(tab => tab.classList.remove("active"));
+      tabButtons.forEach(btn => btn.classList.remove("active"));
+      
+      document.getElementById(tabName).classList.add("active");
+      event.currentTarget.classList.add("active");
+    }
+    
+    // Modal gallery
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const caption = document.getElementById("caption");
+    
+    function openModal(img) {
+      modal.style.display = "flex";
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+      caption.textContent = img.alt;
+    }
+    
+    function closeModal() {
+      modal.style.display = "none";
+    }
+    
+    // Close modal when clicking outside
+    modal.addEventListener("click", function(e) {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape" && modal.style.display === "flex") {
+        closeModal();
+      }
+    });
   </script>
 </body>
 </html>
