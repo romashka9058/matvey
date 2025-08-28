@@ -30,8 +30,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 0 15px 60px;
-      line-height: 1;
+      padding: 0 7px 30px;
+      line-height: 1.4;
     }
 
     .container {
@@ -65,7 +65,7 @@
 
     h1 {
       font-size: 4rem;
-      line-height: 0.7;
+      line-height: 1.2;
       margin-bottom: 20px;
     }
 
@@ -76,7 +76,7 @@
 
     p {
       margin-bottom: 20px;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       text-align: center;
     }
 
@@ -169,7 +169,6 @@
       border-radius: 15px;
       margin-bottom: 30px;
       box-shadow: 0 5px 30px rgba(255, 0, 102, 0.3);
-      padding-bottom: 25px;
     }
 
     header p {
@@ -179,11 +178,11 @@
     }
 
     section {
-      width: 100%;
+      width: 95%;
       background-color: var(--bg-dark);
       border-radius: 15px;
-      padding: 40px;
-      margin-bottom: 30px;
+      padding: 20px;
+      margin-bottom: 15px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     }
 
@@ -200,7 +199,7 @@
 
     @media (min-width: 768px) {
       .image-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         max-width: 900px;
       }
     }
@@ -212,6 +211,8 @@
 
     .gallery-item {
       width: 100%;
+      max-width: 200px;
+      height: 200px;
       object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -268,15 +269,15 @@
 
     .facts-list {
       list-style-type: none;
-      padding-left: 10px;
+      padding-left: 20px;
     }
 
     .facts-list li {
       position: relative;
       padding-left: 30px;
       margin-bottom: 15px;
-      text-align: center;
-      font-size: 1.1rem;
+      text-align: left;
+      font-size: 1.3rem;
     }
 
     .facts-list li::before {
@@ -284,20 +285,19 @@
       position: absolute;
       left: 0;
       color: var(--accent);
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       line-height: 1;
     }
 
     footer {
       background-color: var(--bg-dark);
-      padding: 20px 0;
-      width: 100%;
+      padding: 10px 0;
       text-align: center;
       position: fixed;
-      bottom: 0;
+      bottom: -20;
       left: 0;
       font-size: 1.2rem;
-      padding-bottom: 0px;
+      width: 100%;
     }
 
     .modal {
@@ -364,7 +364,7 @@
       }
       
       h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
       
       p {
@@ -373,8 +373,8 @@
       
       .tab-button {
         min-width: auto;
-        padding: 12px 25px;
-        font-size: 1.1rem;
+        padding: 13px 25px;
+        font-size: 1rem;
       }
       
       .image-grid {
@@ -382,11 +382,11 @@
       }
       
       section {
-        padding: 5px;
+        padding: 10px;
       }
       
       header {
-        padding: 15px 20px;
+        padding: 30px 20px;
       }
       
       header p {
@@ -409,20 +409,21 @@
     
     <div id="striptease" class="tab-content active">
       <header>
-        <h1>Матвей</h1>
-        <h1>Легенда</h1>
-        <h1>Стриптиза</h1>
+        <p>︎</p>
+        <h1>Матвей Легенда Стриптиза</h1>
         <p>Мировая звезда ночных клубов</p>
       </header>
       
       <section>
-        <h2>История</h2>
+        <p>︎</p>
+        <h2>История Матвея</h2>
         <p>Матвей начинал с небольших клубов, но его талант быстро привлек внимание публики. Его уникальный стиль, харизма и пластика сделали его легендой индустрии.</p>
         <p>Каждое его выступление - это шоу, сочетающее элементы акробатики, театра и завораживающего танца.</p>
       </section>
 
       <section>
-        <h2>Галерея</h2>
+        <p>︎</p>
+        <h2>Фотогалерея</h2>
         <div class="image-grid">
           <img src="photo/photo1.jpg" alt="Матвей на сцене" loading="lazy" onclick="openModal(this)" class="gallery-item">
           <img src="photo/photo2.jpg" alt="Матвей в движении" loading="lazy" onclick="openModal(this)" class="gallery-item">
@@ -434,7 +435,8 @@
       </section>
 
       <section>
-        <h2>Турция</h2>
+        <p>︎</p>
+        <h2>Путешествие в Турцию</h2>
         <p>Матвей отправился в Турцию, чтобы встретиться с питерской девой, которая вдохновила его на новые творческие высоты.</p>
         <div class="image-grid large">
           <img src="photo/photo10.jpg" alt="Матвей в Турции" loading="lazy" onclick="openModal(this)" class="gallery-item large">
@@ -442,12 +444,14 @@
       </section>
 
       <section>
-        <h2>Заработки</h2>
+        <p>︎</p>
+        <h2>Заработки Матвея</h2>
         <p>Со своих концертов Матвей заработал больше 3 миллионов рублей, которые сейчас хранятся у его бабушки.</p>
         <p>"Бабушка лучше знает, как распорядиться деньгами," - говорит Матвей.</p>
       </section>
 
       <section>
+        <p>︎︎︎ </p>
         <h2>Результаты</h2>
         <ul class="facts-list">
           <li>Победитель международного конкурса стриптизеров</li>
@@ -458,7 +462,8 @@
       </section>
 
       <section>
-        <h2>Связь</h2>
+        <p>︎</p>
+        <h2>Связаться с Матвеем</h2>
         <p>Хотите заказать выступление Матвея или задать вопрос? ну нахуя это вам?</p>
         <p>ТГК: <a href="https://t.me/Matvey955">t.me/Matvey955</a></p>
       </section>
@@ -466,16 +471,19 @@
     
     <div id="archive" class="tab-content">
       <header>
-        <h1>Архив цитат</h1>
+        <p>︎</p>
+        <h1>Архив цитат и противоречий</h1>
       </header>
       
       <section>
+        <p>︎</p>
         <h2>КТО ТАКОЙ МАТВЕЙ?</h2>
           <p>Матвейчик уникальный человек. Человек, который умудряется менять свои принципы чаще, чем дышит.</p>
         <p>Его философия проста: "Сегодня я думаю так, завтра вот так, а завтра вообще не думаю".</p>
       </section>
       
       <section>
+        <p>︎</p>
         <h2>ЗОЛОТЫЕ ЦИТАТЫ</h2>
         <div class="quote-block">
           <p>«Я никогда не изменяю своим принципам. Кроме тех случаев, когда это выгодно»</p>
@@ -486,16 +494,17 @@
       </section>
       
       <section>
+        <p>︎</p>
         <h2>Фоточки</h2>
         <div class="image-grid">
           <img src="photo/photo7.jpg" alt="Матвей в школе" loading="lazy" onclick="openModal(this)" class="gallery-item">
           <img src="photo/photo8.jpg" alt="Тот же день, спустя 2 часа" loading="lazy" onclick="openModal(this)" class="gallery-item">
           <img src="photo/photo9.jpg" alt="Пост в тгк в тот же вечер" loading="lazy" onclick="openModal(this)" class="gallery-item">
-          <img src="photo/photo11.jpg" alt="В рабочей одежде" loading="lazy" onclick="openModal(this)" class="gallery-item">
         </div>
       </section>
       
       <section>
+        <p>︎</p>
         <h2>ФАКТЫ О МАТВЕЕ</h2>
         <ul class="facts-list">
           <li>Может согласиться и не согласиться одновременно</li>
@@ -503,6 +512,16 @@
           <li>Его принципы имеют полураспад 12 часов</li>
           <li>Уверен, что все его помнят только хорошее</li>
         </ul>
+        <p>︎</p>
+        <p>︎</p>
+        <p>︎</p>
+        <p>︎</p>
+        <p>︎</p>
+        <p>︎</p>
+        <p>А ЕЩЕ ОН СЛИШКОМ, Я БЯЛТЬ ДАЖЕ НЕ ЗНАЮ КАК СКАЗАТЬ</p>
+        <div class="image-grid large">
+          <img src="photo/photo12.jpg" alt="НУБЛЯЯЯЯЯЯ" loading="lazy" onclick="openModal(this)" class="gallery-item large">
+        </div>
       </section>
     </div>
     
