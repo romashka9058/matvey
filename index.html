@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Матвей – мировая звезда стриптиз-клубов и архив противоречий">
+  <title>Матвей – легенда стриптиза</title>
+  <style>
+    :root {
+      --bg-dark: #1a1a1a;
+      --bg-darker: #111;
+      --accent: #FF66CC;
+      --accent-hover: #FF3399;
+      --text: #fff;
+      --text-light: #ddd;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'NewBaskerville', sans-serif;
+      background-color: var(--bg-darker);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 15px 60px;
+      line-height: 1;
+    }
+
+    .con {
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @font-face {
+      font-family: 'TimesET85b';
+      src: url('font/TimesET85b.woff') format('truetype');
+      font-display: swap;
+    }
+    
+    @font-face {
+      font-family: 'NewBaskerville';
+      src: url('font/NewBaskerville.woff') format('truetype');
+      font-display: swap;
+    }
+
+    h1, h2 {
+      font-family: 'TimesET85b', sans-serif;
+      color: var(--accent);
+      text-transform: uppercase;
+      text-shadow: 0 2px 8px rgba(255, 0, 102, 0.8);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 5rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    #mp {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #mp button {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.5rem;
+      border-radius: 8px;
+      margin-top: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-family: 'NewBaskerville', sans-serif;
+    }
+
+    #mp button:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0;
+      width: 100%;
+      gap: 20px;
+    }
+
+    .tab-btn {
+      background-color: #333;
+      color: var(--text);
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.3rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: 'TimesET85b', sans-serif;
+      min-width: 300px;
+    }
+
+    .tab-btn.active {
+      background-color: var(--accent);
+    }
+
+    .tab-con {
+      display: none;
+      width: 100%;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .tab-con.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      background-color: var(--bg-dark);
+      padding: 50px;
+      text-align: center;
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 30px rgba(255, 0, 102, 0.3);
+    }
+
+    header p {
+      font-style: italic;
+      color: var(--text-light);
+      font-size: 1.8rem;
+    }
+
+    section {
+      width: 100%;
+      background-color: var(--bg-dark);
+      border-radius: 15px;
+      padding: 40px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .img-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px auto;
+      padding: 0 10px;
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      .img-grid {
+        max-width: 1300px;
+      }
+    }
+
+    .img-grid.large {
+      max-width: 1000px;
+    }
+
+    .gallery {
+      width: 100%;
+      max-width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .list-img {
+      width: 80%;
+      max-width: 600px;
+      height: auto;
+      max-height: 600px;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      margin: 0 auto;
+    }
+    
+    .gallery.large {
+      max-width: 800px;
+      height: auto;
+      max-height: 700px;
+    }
+   
+    .gallery:hover,
+    .list-img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .qb {
+      background-color: rgba(0, 0, 0, 0.3);
+      border-left: 4px solid var(--accent);
+      padding: 30px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+      font-family: 'NewBaskerville', sans-serif;
+    }
+
+    .qb p {
+      font-style: italic;
+      text-align: left;
+      font-size: 1.4rem;
+      quotes: "«" "»" "‹" "›";
+    }
+
+    .qb small {
+      display: block;
+      color: #aaa;
+      text-align: right;
+      margin-top: 15px;
+      font-size: 1.1rem;
+    }
+
+    .facts {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+
+    .facts li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 15px;
+      text-align: left;
+      font-size: 1.5rem;
+    }
+
+    .facts li::before {
+      content: "》";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    footer {
+      background-color: var(--bg-dark);
+      padding: 10px;
+      padding-bottom: 0px;
+      width: 100%;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      font-size: 1.2rem;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .modal.show {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 1;
+    }
+
+    .modal-con {
+      width: 90%;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .modal-img {
+      max-width: 100%;
+      max-height: 70vh;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: var(--accent);
+      font-size: 50px;
+      cursor: pointer;
+    }
+
+    .caption {
+      margin-top: 20px;
+      color: var(--text);
+      font-size: 1.5rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.75rem;
+      }
+      
+      h2 {
+        font-size: 2.25rem;
+      }
+      
+      p {
+        font-size: 1.5rem;
+      }
+      
+      .tab-btn {
+        min-width: auto;
+        padding: 12px 25px;
+        font-size: 1.1rem;
+      }
+      
+      .img-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      section {
+        padding: 20px;
+      }
+      
+      header {
+        padding: 30px 20px;
+      }
+      
+      header p {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="con">
+    <div id="mp">
+      <h1>Матвей с этого сайта существует и будет существовать, приветт матвей😘</h1>
+      <button onclick="playMusic()">убить 10 ильясов</button>
+    </div>
+    
+    <div class="tabs">
+      <button class="tab-btn active" onclick="openTab('striptease')">Легенда Стриптиза</button>
+      <button class="tab-btn" onclick="openTab('archive')">Архив Матвея</button>
+    </div>
+    
+    <div id="striptease" class="tab-con active">
+      <header>
+        <h1>Матвей Легенда Стриптиза</h1>
+        <p>Мировая звезда ночных клубов</p>
+      </header>
+      
+      <section>
+        <h2>История Матвея</h2>
+        <p>Матвей начинал с небольших клубов, но его талант быстро привлек внимание публики. Его уникальный стиль, харизма и пластика сделали его легендой индустрии.</p>
+        <p>Каждое его выступление - это шоу, сочетающее элементы акробатики, театра и завораживающего танца.</p>
+      </section>
+
+      <section>
+        <h2>Фотогалерея</h2>
+        <div class="img-grid">
+          <img src="p/p1.jpg" alt="Матвей на сцене" loading="lazy" onclick="openModal(this)" class="gallery">
+          <img src="p/p2.jpg" alt="Матвей в движении" loading="lazy" onclick="openModal(this)" class="gallery">
+          <img src="p/p3.jpg" alt="Матвей звезда" loading="lazy" onclick="openModal(this)" class="gallery">
+          <img src="p/p4.jpg" alt="Матвей с фанатами" loading="lazy" onclick="openModal(this)" class="gallery">
+          <img src="p/p5.jpg" alt="Матвей в тренировке" loading="lazy" onclick="openModal(this)" class="gallery">
+          <img src="p/p6.jpg" alt="Матвей в клубе" loading="lazy" onclick="openModal(this)" class="gallery">
+        </div>
+      </section>
+
+      <section>
+        <h2>Путешествие в Турцию</h2>
+        <p>Матвей отправился в Турцию, чтобы встретиться с питерской девой, которая вдохновила его на новые творческие высоты.</p>
+        <div class="img-grid large">
+          <img src="p/p10.jpg" alt="Матвей в Турции" loading="lazy" onclick="openModal(this)" class="gallery large">
+        </div>
+      </section>
+
+      <section>
+        <h2>Заработки Матвея</h2>
+        <p>Со своих концертов Матвей заработал больше 3 миллионов рублей, которые сейчас хранятся у его бабушки.</p>
+        <p>"Бабушка лучше знает, как распорядиться деньгами," - говорит Матвей.</p>
+      </section>
+
+      <section>
+        <h2>Результаты</h2>
+        <ul class="facts">
+          <li>Победитель международного конкурса стриптизеров</li>
+          <li>Лучший артист года по версии Night Club Awards</li>
+          <li>Выступления в крупнейших клубах мира</li>
+          <li>Создание собственного элитного шоу-пространства</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Связаться с Матвеем</h2>
+        <p>Хотите заказать выступление Матвея или задать вопрос? ну нахуя это вам?</p>
+        <p>ТГК: <a href="https://t.me/matveQr">t.me/matveQr</a></p>
+      </section>
+    </div>
+    
+    <div id="archive" class="tab-con">
+      <header>
+        <h1>Архив цитат и противоречий</h1>
+      </header>
+      
+      <section>
+        <h2>КТО ТАКОЙ МАТВЕЙ?</h2>
+          <p>Матвейчик уникальный человек. Человек, который умудряется менять свои принципы чаще, чем дышит.</p>
+        <p>Его философия проста: "Сегодня я думаю так, завтра вот так, а завтра вообще не думаю".</p>
+      </section>
+      
+      <section>
+        <h2>ЗОЛОТЫЕ ЦИТАТЫ</h2>
+        <div class="qb">
+          <p>Я никогда не изменяю своим принципам. Кроме тех случаев, когда это выгодно</p>
+        </div>
+        <div class="qb">
+          <p>Это не ложь, это альтернативная интерпретация правды</p>
+        </div>
+      </section>
+      
+      <section>
+        <h2>Фоточки</h2>
+        <div class="img-grid">
+          <img src="p/p7.jpg" alt="Матвей в школе" loading="lazy" onclick="openModal(this)" class="gallery">
+          <img src="p/p8.jpg" alt="Тот же день, спустя 2 часа" loading="lazy" onclick="openModal(this)" class="gallery">
+          <img src="p/p9.jpg" alt="Пост в тгк в тот же вечер" loading="lazy" onclick="openModal(this)" class="gallery">
+        </div>
+      </section>
+      
+      <section>
+        <h2>ФАКТЫ О МАТВЕЕ</h2>
+        <ul class="facts">
+          <li>Может согласиться и не согласиться одновременно</li>
+          <li>Рекорд — 3 противоположных мнения за 15 минут</li>
+          <li>Его принципы имеют полураспад 12 часов</li>
+          <li>Уверен, что все его помнят только хорошее</li>
+        </ul>
+      </section>
+    </div>
+    
+    <div id="imageModal" class="modal">
+      <span class="close" onclick="closeModal()">х</span>
+      <div class="modal-con">
+        <img id="modalImage" class="modal-img">
+        <div id="caption" class="caption"></div>
+      </div>
+    </div>
+    
+    <footer>
+      <p>добраутра матвей😜</p>
+    </footer>
+  </div>
+
+  <script>
+    function playMusic() {
+      document.getElementById("mp").style.display = 'none';
+    }
+    
+    function openTab(tabName) {
+      document.querySelectorAll('.tab-con').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      document.getElementById(tabName).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+    
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const caption = document.getElementById("caption");
+    
+    function openModal(img) {
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+      caption.textContent = img.alt;
+      
+      modal.style.display = 'flex';
+      setTimeout(() => modal.classList.add('show'), 10);
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal() {
+      modal.classList.remove('show');
+      setTimeout(() => {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }, 300);
+    }
+    
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeModal();
+    });
+    
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('show')) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
