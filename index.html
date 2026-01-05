@@ -1,387 +1,247 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
+<html lang="ru"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Матвей – мировая звезда стриптиз-клубов и архив противоречий">
-  <title>Матвей – легенда стриптиза</title>
+  <title>Легенда стриптиза</title>
+
   <style>
-   @font-face {
-      font-family: 'buyan';
-      src: url('font/BuyanBold.woff') format('woff');
-      font-display: swap;
+    @font-face{font-family:buyan;src:url(BuyanBold.woff)}
+    @font-face{font-family:bebas;src:url(BebasNeueBold.woff)}
+    :root{--a:#FF66CC;}
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;-ms-overflow-style: none;scrollbar-width: none;}
+    ::-webkit-scrollbar { width: 0; height: 0; }
+
+    html,body{
+      height:100%;
+      overflow:hidden;
+    }
+
+    body{
+      font-family:bebas,sans-serif;
+      color:#fff;
+      position:relative;
+      background:
+        linear-gradient(
+          145deg,
+          #D01EC7,
+          #A01787,
+          #B523C1,
+          #A01799
+        );
+      display:flex;
+        justify-content:center;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background: url("paris.svg");
+      opacity:.5;
+      pointer-events:none;
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(255,255,255,.15),
+          rgba(0,0,0,.55)
+        );
+      pointer-events:none;
+      z-index:1;
+    }
+
+    .con{
+      position:relative;
+      z-index:2;
+      max-width:1230px;
+      width:100%;
+      height:100%;
+      overflow-y:auto;
+      padding:min(4vmin,4rem);
+    }
+
+
+    #mp h1 {
+      max-width: 50rem;
+    }
+
+    h1,h2{
+      font-family:buyan,sans-serif;
+      color:var(--a);
+      text-transform:uppercase;
+      text-align:center;
+      text-shadow:0 2px 8px rgba(255,0,102,.8);
+    }
+
+    h1{
+      font-size:min(15vmin,5rem);
+      line-height:min(11.5vmin,4rem);
+    }
+
+    h2{
+      font-size:min(12vmin,4rem);
+      margin-bottom:min(2vmin,2rem);
+      font-weight: 100
+    }
+
+    h3{
+      margin-top:min(-0.5vmin,1rem);
+      font-size:min(8vmin,3rem);
+      text-align:center;
+    }
+
+    p{
+      font-size:min(6vmin,2rem);
+      text-align:center;
     }
     
-    @font-face {
-      font-family: 'bebas';
-      src: url('font/BebasNeueBold.woff') format('woff');
-      font-display: swap;
-    } 
-   
-    :root {
-      --bg-dark: #1a1a1a;
-      --bg-darker: #111;
-      --accent: #FF66CC;
-      --accent-hover: #FF3399;
-      --text: #fff;
-      --text-light: #ddd;
+    header p{
+      font-size:min(4vmin,1.5rem);
+      letter-spacing: 0.2em;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+    a{color:var(--a);text-decoration:none}
+
+    header,section{
+      width:100%;
+      background: rgba(34, 34, 34, .6);
+      border-radius:min(2vmin,1.5rem);
+      padding:min(3vmin,5rem);
+      margin-bottom:min(3vmin,1.5rem);
+      backdrop-filter:blur(1px);
     }
 
-    body {
-      font-family: 'bebas', sans-serif;
-      background-color: var(--bg-darker);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: clamp(0.1rem, 4vw, 4rem) clamp(0.1rem, 4vw, 4rem) clamp(0.1rem, 15vw, 4rem);
-      line-height: 1;
+    .tab-con{display:none;width:100%;}
+    .tab-btn.active{background:var(--a)}
+    .tab-con.active{
+      display:flex;
+      flex-direction:column;
+    }
+    .tabs{
+      display:flex;
+      justify-content:center;
+      gap:min(2vmin,1rem);
+      margin:min(-2vmin,1rem) 0 min(5vmin,1rem);
+    }
+    .tab-btn{
+      background:#333;
+      color:#fff;
+      font-family:buyan,sans-serif;
+      font-size:min(7vmin,2rem);
+      padding:min(1vmin,1rem);
+      border-radius:min(1vmin,1rem);
+      min-width:min(40vmin,20rem);
+    }
+    .tab-btn{
+      min-width:min(40vmin,20rem);
+      text-align:center;
     }
 
-    .con {
-      width: 100%;
-      max-width: 1300px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+
+    .img-grid{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:min(2vmin,1rem);
+      width:100%;
+      margin:min(5vmin,1rem) auto;
     }
 
-    h1, h2 {
-      font-family: 'buyan', sans-serif;
-      color: var(--accent);
-      text-transform: uppercase;
-      text-shadow: 0 2px 8px rgba(255, 0, 102, 0.8);
-      text-align: center;
+    .gallery,.list-img{
+      border-radius:min(4vmin,2rem);
+      box-shadow:0 5px 15px rgba(0,0,0,.2);
+      transition:.3s;
     }
 
-    h1 {
-      font-size: clamp(0.01rem, 15vw, 5rem);
-      line-height: clamp(0.1rem, 12vw, 4.5rem);
-      margin-bottom: clamp(0.01rem, 1vw, 4.5rem);
-      margin-top: clamp(0.01rem, 3vw, 4.5rem);
+    .gallery{
+      width:min(40vmin,23rem);
+      height:min(30vmin,25rem);
     }
 
-    h2 {
-      font-size: clamp(0.1rem, 10vw, 4rem);
-      margin-bottom: clamp(0.1rem, 2vw, 2rem);
-    }
-    
-    h3 {
-       margin-top: -15px;
-       font-size: clamp(0.1rem, 7.5vw, 2.5rem);
-       text-align: center; 
-       text-transform: uppercase;
+    .gallery.large{
+      width:100%;
+      height:min(59vmin,50rem);
     }
 
-    p {
-      margin-bottom: clamp(0.1rem, 6vw, 0.75rem);
-      font-size: clamp(0.1rem, 6vw, 2rem);
-      text-align: center;
+    .list-img{
+      width:80%;
+      max-width:600px;
+      object-fit:contain
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color 0.3s;
+    .gallery:hover,.list-img:hover{transform:scale(1.03)}
+
+    .facts{
+      padding-left:min(4.5vmin,3rem);
     }
 
-    a:hover {
-      color: var(--accent-hover);
-      text-decoration: underline;
+    .facts li{
+      position:relative;
+      padding-left:min(2vmin,3rem);
+      font-size:min(7vmin,2.5rem);
+      margin-bottom:min(1vmin,2rem);
     }
 
-    #mp {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.95);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      padding: clamp(0.1rem, 20vw, 8rem);
-      text-align: center;
+    .qb{
+      background:rgba(0,0,0,.3);
+      border-left:min(1vmin,.4rem) solid var(--a);
+      padding:min(3vmin,1rem);
+      border-radius:min(2vmin,1rem);
     }
 
-    #mp button {
-      background-color: var(--accent);
-      color: white;
-      border: none;
-      padding: clamp(0.1rem, 0vw, 0rem) clamp(0.1rem, 20vw, 5rem);
-      font-size: clamp(0.1rem, 6vw, 3rem); 
-      border-radius: clamp(0.1rem, 2vw, 2rem);
-      margin-top: clamp(0.1rem, 3vw, 1rem);
-      cursor: pointer;
-      transition: background-color 0.3s;
-      font-family: 'bebas', sans-serif;
+    .qb p{
+      font-style:italic;
+      text-align:left;
+      font-size:min(7vmin,2.5rem);
     }
 
-    #mp button:hover {
-      background-color: var(--accent-hover);
+    #mp{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.95);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      z-index:1000;
     }
 
-    .tabs {
-      display: flex;
-      justify-content: center;
-      margin: clamp(0.1rem, 5vw, 1rem);
-      width: 30px;
-      gap: clamp(0.1rem, 2vw, 1rem);
+    #mp button{
+      background:var(--a);
+      color:#fff;
+      border:0;
+      font-family:bebas,sans-serif;
+      font-size:min(11vmin,3rem);
+      padding:min(2vmin,1rem) min(10vmin,5rem);
+      border-radius:min(2vmin,2rem);
     }
 
-    .tab-btn {
-      background-color: #333;
-      color: var(--text);
-      border: none;
-      padding: clamp(0.1rem, 1vw, 1rem);
-      font-size: clamp(0.1rem, 5vw, 2rem);
-      border-radius: clamp(0.1rem, 1vw, 1rem);
-      cursor: pointer;
-      transition: all 0.3s;
-      font-family: 'buyan', sans-serif;
-      min-width: clamp(0.1rem, 40vw, 20rem);
-    }
-
-    .tab-btn.active {
-      background-color: var(--accent);
-    }
-
-    .tab-con {
-      display: none;
-      width: 100%;
-      animation: fadeIn 0.5s ease-out;
-    }
-
-    .tab-con.active {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    header {
-      background-color: var(--bg-dark);
-      padding: clamp(0.1rem, 4vw, 5rem);
-      text-align: center;
-      width: 100%;
-      border-radius: clamp(0.1rem, 2vw, 5rem);
-      margin-bottom: clamp(0.1rem, 4vw, 5rem);
-      box-shadow: 0 5px 30px rgba(255, 0, 102, 0.3);
-    }
-
-    header p {
-      font-style: italic;
-      color: var(--text-light);
-      font-size: clamp(0.1rem, 5vw, 2rem);
-    }
-
-    section {
-      width: 100%;
-      background-color: var(--bg-dark);
-      border-radius: clamp(0.1rem, 2vw, 5rem);
-      padding: clamp(0.1rem, 4vw, 4rem);
-      margin-bottom: clamp(0.1rem, 4vw, 2rem);
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .img-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin: 20px auto;
-      padding: 0 10px;
-      width: 100%;
-    }
-
-    .img-grid.large {
-      max-width: 1000px;
-    }
-
-    .gallery {
-      width: 100%;
-      max-width: clamp(0.1rem, 55vw, 25rem);
-      height: clamp(0.1rem, 40vw, 30rem);
-      object-fit: cover;
-      border-radius: clamp(0.1rem, 4vw, 2rem);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    
-    .list-img {
-      width: 80%;
-      max-width: 600px;
-      height: auto;
-      max-height: 600px;
-      object-fit: contain;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-      cursor: pointer;
-      margin: 0 auto;
-    }
-    
-    .gallery.large {
-      max-width: clamp(0.1rem, 30rem, 30rem);
-      height: clamp(0.1rem, 75vw, 30rem);
-      max-height: 1000px;
-    }
-   
-    .gallery:hover,
-    .list-img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .qb {
-      background-color: rgba(0, 0, 0, 0.3);
-      border-left: clamp(0.1rem, 1vw, 1rem) solid var(--accent);
-      padding: clamp(0.1rem, 3vw, 1rem);
-      margin: 20px 0px;
-      border-radius: 0px 8px 8px 0px;
-      font-family: 'bebas', sans-serif;
-    }
-
-    .qb p {
-      font-style: italic;
-      text-align: left;
-      font-size: clamp(0.1rem, 6vw, 3rem);
-      quotes: "«" "»" "‹" "›";
-    }
-
-    .qb small {
-      display: block;
-      color: #aaa;
-      text-align: right;
-      margin-top: 15px;
-      font-size: 1.1rem;
-    }
-
-    .facts {
-      list-style-type: none;
-      padding-left: clamp(0.1rem, 3vw, 5rem);
-    }
-
-    .facts li {
-      position: relative;
-      padding-left: clamp(0.1rem, 5vw, 3rem);
-      margin-bottom: clamp(0.1rem, 4vw, 2rem);
-      text-align: left;
-      font-size: clamp(0.1rem, 6vw, 2.5rem);
-    }
-
-    .facts li::before {
-      content: "■";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-size: clamp(0.1rem, 5vw, 2rem);
-      line-height: 1;
-    }
-
-    footer {
-      background-color: var(--bg-dark);
-      padding: clamp(0.1rem, 4vw, 1rem);
-      width: 100%;
-      text-align: center;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      padding-bottom: clamp(0.1rem, 0vw, 1rem);
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.95);
-      z-index: 1000;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .modal.show {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 1;
-    }
-
-    .modal-con {
-      width: 90%;
-      max-width: 800px;
-      text-align: center;
-    }
-
-    .modal-img {
-      max-width: 100%;
-      max-height: 70vh;
-      border-radius: 10px;
-    }
-
-    .close {
-      position: absolute;
-      top: clamp(0.1rem, 4vw, 2rem);
-      right: clamp(0.1rem, 4vw, 3rem);
-      color: var(--accent);
-      font-size: clamp(0.1rem, 15vw, 5rem);
-      cursor: pointer;
-    }
-
-    .caption {
-      margin-top: clamp(0.1rem, 2vw, 5rem);
-      color: var(--text);
-      font-size: clamp(0.1rem, 7vw, 3rem);
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .img-grid {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: clamp(0.1rem, 65vw, 30rem);
-      }
-    }
-  
+    #mp button:hover{background:#FF3399}
   </style>
+  
 </head>
 <body>
+
   <div class="con">
+
     <div id="mp">
       <h1>Матвей с этого сайта существует и будет существовать</h1>
       <h1>где мои сливы, матвей</h1>
       <button onclick="playMusic()">убить 10 ильясов</button>
     </div>
-    
+
     <div class="tabs">
-      <button class="tab-btn active" onclick="openTab('striptease')">Легенда Стриптиза</button>
-      <button class="tab-btn" onclick="openTab('archive')">Архив Матвея</button>
+      <button class="tab-btn active" onclick="openTab('striptease',this)">Легенда Стриптиза</button>
+      <button class="tab-btn" onclick="openTab('archive',this)">Архив Матвея</button>
     </div>
-    
-    <div id="striptease" class="tab-con active">
+
+  <div id="striptease" class="tab-con active">
       <header>
         <h1>Матвей Легенда Стриптиза</h1>
         <p>Мировая звезда ночных клубов</p>
@@ -396,20 +256,20 @@
       <section>
         <h2>Фотогалерея</h2>
         <div class="img-grid">
-          <img src="p/p1.jpg" alt="Матвей на сцене" loading="lazy" onclick="openModal(this)" class="gallery">
-          <img src="p/p2.jpg" alt="Матвей в движении" loading="lazy" onclick="openModal(this)" class="gallery">
-          <img src="p/p3.jpg" alt="Матвей звезда" loading="lazy" onclick="openModal(this)" class="gallery">
-          <img src="p/p4.jpg" alt="Матвей с фанатами" loading="lazy" onclick="openModal(this)" class="gallery">
-          <img src="p/p5.jpg" alt="Матвей в тренировке" loading="lazy" onclick="openModal(this)" class="gallery">
-          <img src="p/p6.jpg" alt="Матвей в клубе" loading="lazy" onclick="openModal(this)" class="gallery">
+          <img src="p/p1.jpg" loading="lazy" class="gallery">
+          <img src="p/p2.jpg" loading="lazy" class="gallery">
+          <img src="p/p3.jpg" loading="lazy" class="gallery">
+          <img src="p/p4.jpg" loading="lazy" class="gallery">
+          <img src="p/p5.jpg" loading="lazy" class="gallery">
+          <img src="p/p6.jpg" loading="lazy" class="gallery">
         </div>
       </section>
 
       <section>
         <h2>Путешествие в Турцию</h2>
         <p>Матвей отправился в Турцию, чтобы встретиться с питерской девой, которая вдохновила его на новые творческие высоты.</p>
-        <div class="img-grid large">
-          <img src="p/p10.jpg" alt="Матвей в Турции" loading="lazy" onclick="openModal(this)" class="gallery large">
+        <div class="img-grid">
+          <img src="p/p10.jpg" loading="lazy" class="gallery large">
         </div>
       </section>
 
@@ -436,8 +296,8 @@
         <p>ТГК: <a href="https://t.me/matveQr">t.me/matveQr</a></p>
       </section>
     </div>
-    
-    <div id="archive" class="tab-con">
+
+  <div id="archive" class="tab-con">
       <header>
         <h1>Архив цитат и противоречий</h1>
       </header>
@@ -445,7 +305,7 @@
       <section>
         <h2>КТО ТАКОЙ МАТВЕЙ?</h2>
           <p>Матвейчик уникальный человек. Человек, который умудряется менять свои принципы чаще, чем дышит.</p>
-        <p>Его философия проста: "Сегодня я думаю так, завтра вот так, а завтра вообще не думаю".</p>
+          <p>Его философия проста: "Сегодня я думаю так, завтра вот так, а завтра вообще не думаю".</p>
       </section>
       
       <section>
@@ -461,9 +321,9 @@
       <section>
         <h2>Фоточки</h2>
         <div class="img-grid">
-          <img src="p/p7.jpg" alt="Матвей в школе" loading="lazy" onclick="openModal(this)" class="gallery">
-          <img src="p/p8.jpg" alt="Тот же день, спустя 2 часа" loading="lazy" onclick="openModal(this)" class="gallery">
-          <img src="p/p9.jpg" alt="Пост в тгк в тот же вечер" loading="lazy" onclick="openModal(this)" class="gallery">
+          <img src="p/p7.jpg" loading="lazy" class="gallery">
+          <img src="p/p8.jpg" loading="lazy" class="gallery">
+          <img src="p/p9.jpg" loading="lazy" class="gallery">
         </div>
       </section>
       
@@ -478,68 +338,17 @@
       </section>
     </div>
     
-    <div id="imageModal" class="modal">
-      <span class="close" onclick="closeModal()">х</span>
-      <div class="modal-con">
-        <img id="modalImage" class="modal-img">
-        <div id="caption" class="caption"></div>
-      </div>
-    </div>
-    
-    <footer>
-      <p>добраутра матвей😜</p>
-    </footer>
   </div>
-
+ 
   <script>
-    function playMusic() {
-      document.getElementById("mp").style.display = 'none';
+    function playMusic(){mp.style.display='none'}
+    function openTab(id,b){
+      document.querySelectorAll('.tab-con,.tab-btn')
+      .forEach(e=>e.classList.remove('active'))
+      document.getElementById(id).classList.add('active')
+      b.classList.add('active')
     }
-    
-    function openTab(tabName) {
-      document.querySelectorAll('.tab-con').forEach(tab => {
-        tab.classList.remove('active');
-      });
-      
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      
-      document.getElementById(tabName).classList.add('active');
-      event.currentTarget.classList.add('active');
-    }
-    
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("modalImage");
-    const caption = document.getElementById("caption");
-    
-    function openModal(img) {
-      modalImg.src = img.src;
-      modalImg.alt = img.alt;
-      caption.textContent = img.alt;
-      
-      modal.style.display = 'flex';
-      setTimeout(() => modal.classList.add('show'), 10);
-      document.body.style.overflow = 'hidden';
-    }
-    
-    function closeModal() {
-      modal.classList.remove('show');
-      setTimeout(() => {
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
-      }, 300);
-    }
-    
-    modal.addEventListener('click', function(e) {
-      if (e.target === modal) closeModal();
-    });
-    
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal.classList.contains('show')) {
-        closeModal();
-      }
-    });
   </script>
+
 </body>
 </html>
