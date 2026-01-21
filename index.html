@@ -2,15 +2,23 @@
 <html lang="ru"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Матвей – мировая звезда стриптиз-клубов и архив противоречий">
-  <title>Легенда стриптиза</title>
+    <meta name="theme-color" content="#CA1BB4">
+    <meta name="description" content="Матвей это легенда ночных клубах о котором должны знать все">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Легенда стриптиза">
+    <link rel="icon" type="image/png" href="./p/p9.jpg">
+    <link rel="apple-touch-icon" href="./p/p9.jpg">
+    <title>Матвей - легенда стриптиза</title>
 
   <style>
     @font-face{font-family:buyan;src:url(BuyanBold.woff)}
     @font-face{font-family:bebas;src:url(BebasNeueBold.woff)}
     :root{--a:#FF66CC;}
-    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;-ms-overflow-style: none;scrollbar-width: none;}
-    ::-webkit-scrollbar { width: 0; height: 0; }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    button, div { -webkit-tap-highlight-color: transparent; background-color: none; }
+    *{scroll-behavior:smooth;}
 
     html,body{
       height:100%;
@@ -38,8 +46,9 @@
       position:fixed;
       inset:0;
       background: url("paris.svg");
-      opacity:.5;
+      opacity: .5;
       pointer-events:none;
+      filter:blur(.5px); 
     }
 
     body::after{
@@ -91,7 +100,7 @@
     }
 
     h3{
-      margin-top:min(-0.5vmin,1rem);
+      margin-top:min(-.5vmin,1rem);
       font-size:min(8vmin,3rem);
       text-align:center;
     }
@@ -103,7 +112,7 @@
     
     header p{
       font-size:min(4vmin,1.5rem);
-      letter-spacing: 0.2em;
+      letter-spacing: .2em;
     }
 
     a{color:var(--a);text-decoration:none}
@@ -114,7 +123,6 @@
       border-radius:min(2vmin,1.5rem);
       padding:min(3vmin,5rem);
       margin-bottom:min(3vmin,1.5rem);
-      backdrop-filter:blur(1px);
     }
 
     .tab-con{display:none;width:100%;}
