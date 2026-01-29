@@ -2,69 +2,60 @@
 <html lang="ru"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#CA1BB4">
     <meta name="description" content="Матвей это легенда ночных клубах о котором должны знать все">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Легенда стриптиза">
     <link rel="icon" type="image/png" href="./p/p9.jpg">
-    <link rel="apple-touch-icon" href="./p/p9.jpg">
     <title>Матвей - легенда стриптиза</title>
 
   <style>
     @font-face{font-family:buyan;src:url(BuyanBold.woff)}
     @font-face{font-family:bebas;src:url(BebasNeueBold.woff)}
-    :root{--a:#FF66CC;}
-    *{margin:0;padding:0;box-sizing:border-box;}
-    button, div { -webkit-tap-highlight-color: transparent; background-color: none; }
-    *{scroll-behavior:smooth;}
-
-    html,body{
-      height:100%;
-      overflow:hidden;
+    
+    :root{
+      --primary:#FF66CC;
+      --primary-hover:#FF3399;
+      --text:#fff;
+      --dark:rgba(34, 34, 34, .6);
+      --shadow:0 0 1.5vmin #000;
+      --gap:2vmin;
+      --pad:min(3vmin,5rem);
+      --radius:min(2vmin,1.5rem);
+      --font-buyan:buyan,sans-serif;
+      --font-bebas:bebas,sans-serif;
     }
-
+    
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+    button,div{-webkit-tap-highlight-color:transparent}
+    html,body{height:100%;overflow:hidden}
+    
+    
     body{
-      font-family:bebas,sans-serif;
-      color:#fff;
+      font-family:var(--font-bebas);
+      color:var(--text);
       position:relative;
-      background:
-        linear-gradient(
-          145deg,
-          #D01EC7,
-          #A01787,
-          #B523C1,
-          #A01799
-        );
+      background:linear-gradient(145deg,#D01EC7,#A01787,#B523C1,#A01799);
       display:flex;
-        justify-content:center;
+      justify-content:center;
     }
-
+    
     body::before{
       content:"";
       position:fixed;
       inset:0;
-      background: url("paris.svg");
-      opacity: .5;
+      background:url("paris.svg");
+      opacity:.5;
       pointer-events:none;
-      filter:blur(.5px); 
+      filter:blur(.5px);
     }
-
+    
     body::after{
       content:"";
       position:fixed;
       inset:0;
-      background:
-        radial-gradient(
-          circle at top,
-          rgba(255,255,255,.15),
-          rgba(0,0,0,.55)
-        );
+      background:radial-gradient(circle at top,rgba(255,255,255,.15),rgba(0,0,0,.55));
       pointer-events:none;
       z-index:1;
     }
-
+    
     .con{
       position:relative;
       z-index:2;
@@ -74,37 +65,35 @@
       overflow-y:auto;
       padding:min(4vmin,4rem);
     }
-
-
-    #mp h1 {
-      max-width: 50rem;
-    }
-
+    
+    a{color:var(--primary);text-decoration:none}
+    
     h1,h2{
-      font-family:buyan,sans-serif;
-      color:var(--a);
+      font-family:var(--font-buyan);
+      color:var(--primary);
       text-transform:uppercase;
       text-align:center;
       text-shadow:0 2px 8px rgba(255,0,102,.8);
     }
-
+    
     h1{
-      font-size:min(15vmin,5rem);
-      line-height:min(11.5vmin,4rem);
+      font-size:min(15vmin,7rem);
+      line-height: .75em;
     }
-
+    
+    #mp h1{max-width:88vmin}
+    
     h2{
-      font-size:min(12vmin,4rem);
-      margin-bottom:min(2vmin,2rem);
-      font-weight: 100
+      font-size:min(12vmin,5rem);
+      font-weight:100;
     }
-
+    
     h3{
       margin-top:min(-.5vmin,1rem);
       font-size:min(8vmin,3rem);
       text-align:center;
     }
-
+    
     p{
       font-size:min(6vmin,2rem);
       text-align:center;
@@ -112,103 +101,100 @@
     
     header p{
       font-size:min(4vmin,1.5rem);
-      letter-spacing: .2em;
+      letter-spacing:.2em;
     }
-
-    a{color:var(--a);text-decoration:none}
-
+    
     header,section{
       width:100%;
-      background: rgba(34, 34, 34, .6);
-      border-radius:min(2vmin,1.5rem);
-      padding:min(3vmin,5rem);
-      margin-bottom:min(3vmin,1.5rem);
+      background:var(--dark);
+      border-radius:var(--radius);
+      padding:var(--pad);
+      margin-bottom:var(--gap);
+      box-shadow:var(--shadow);
     }
-
-    .tab-con{display:none;width:100%;}
-    .tab-btn.active{background:var(--a)}
-    .tab-con.active{
-      display:flex;
-      flex-direction:column;
-    }
+    
     .tabs{
       display:flex;
       justify-content:center;
-      gap:min(2vmin,1rem);
+      gap:var(--gap);
       margin:min(-2vmin,1rem) 0 min(5vmin,1rem);
     }
+    
     .tab-btn{
       background:#333;
-      color:#fff;
-      font-family:buyan,sans-serif;
+      color:var(--text);
+      font-family:var(--font-buyan);
       font-size:min(7vmin,2rem);
       padding:min(1vmin,1rem);
       border-radius:min(1vmin,1rem);
       min-width:min(40vmin,20rem);
-    }
-    .tab-btn{
-      min-width:min(40vmin,20rem);
       text-align:center;
+      border:0;
+      cursor:pointer;
+      transition:.3s;
     }
-
-
+    
+    .tab-btn:hover{opacity:.8}
+    .tab-btn.active{background:var(--primary)}
+    
+    .tab-con{display:none;width:100%}
+    .tab-con.active{display:flex;flex-direction:column}
+    
     .img-grid{
       display:flex;
       flex-wrap:wrap;
       justify-content:center;
-      gap:min(2vmin,1rem);
+      gap:var(--gap);
       width:100%;
       margin:min(5vmin,1rem) auto;
     }
-
+    
     .gallery,.list-img{
       border-radius:min(4vmin,2rem);
       box-shadow:0 5px 15px rgba(0,0,0,.2);
       transition:.3s;
     }
-
+    
+    .gallery,.list-img:hover{transform:scale(1.03)}
+    
     .gallery{
       width:min(40vmin,23rem);
       height:min(30vmin,25rem);
     }
-
+    
     .gallery.large{
       width:100%;
       height:min(59vmin,50rem);
     }
-
+    
     .list-img{
       width:80%;
       max-width:600px;
-      object-fit:contain
+      object-fit:contain;
     }
-
-    .gallery:hover,.list-img:hover{transform:scale(1.03)}
-
-    .facts{
-      padding-left:min(4.5vmin,3rem);
-    }
-
+    
+    .facts{padding-left:min(4.5vmin,3rem)}
+    
     .facts li{
       position:relative;
       padding-left:min(2vmin,3rem);
       font-size:min(7vmin,2.5rem);
       margin-bottom:min(1vmin,2rem);
     }
-
+    
     .qb{
       background:rgba(0,0,0,.3);
-      border-left:min(1vmin,.4rem) solid var(--a);
+      border-left:min(1vmin,.4rem) solid var(--primary);
       padding:min(3vmin,1rem);
       border-radius:min(2vmin,1rem);
     }
-
+    
     .qb p{
       font-style:italic;
       text-align:left;
       font-size:min(7vmin,2.5rem);
     }
-
+    
     #mp{
       position:fixed;
       inset:0;
@@ -219,18 +205,20 @@
       align-items:center;
       z-index:1000;
     }
-
+    
     #mp button{
-      background:var(--a);
-      color:#fff;
+      background:var(--primary);
+      color:var(--text);
       border:0;
-      font-family:bebas,sans-serif;
+      font-family:var(--font-bebas);
       font-size:min(11vmin,3rem);
       padding:min(2vmin,1rem) min(10vmin,5rem);
       border-radius:min(2vmin,2rem);
+      cursor:pointer;
+      transition:.3s;
     }
-
-    #mp button:hover{background:#FF3399}
+    
+    #mp button:hover{background:var(--primary-hover)}
   </style>
   
 </head>
@@ -349,13 +337,12 @@
   </div>
  
   <script>
-    function playMusic(){mp.style.display='none'}
-    function openTab(id,b){
-      document.querySelectorAll('.tab-con,.tab-btn')
-      .forEach(e=>e.classList.remove('active'))
-      document.getElementById(id).classList.add('active')
-      b.classList.add('active')
-    }
+    const playMusic=()=>mp.style.display='none';
+    const openTab=(id,btn)=>{
+      document.querySelectorAll('.tab-con,.tab-btn').forEach(e=>e.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      btn.classList.add('active');
+    };
   </script>
 
 </body>
