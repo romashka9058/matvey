@@ -7,6 +7,8 @@
     <title>Матвей - легенда стриптиза</title>
 
   <style>
+
+
     @font-face{font-family:buyan;src:url(BuyanBold.woff)}
     @font-face{font-family:bebas;src:url(BebasNeueBold.woff)}
     
@@ -44,7 +46,6 @@
       background:url("paris.svg");
       opacity:.5;
       pointer-events:none;
-      filter:blur(.5px);
     }
     
     body::after{
@@ -73,18 +74,18 @@
       color:var(--primary);
       text-transform:uppercase;
       text-align:center;
-      text-shadow:0 2px 8px rgba(255,0,102,.8);
+      text-shadow:0 0 10vmin rgb(205,0,110);
     }
     
     h1{
-      font-size:min(15vmin,7rem);
-      line-height: .75em;
+      font-size:min(20vmin,12rem);
+      line-height: 0.75em;
     }
     
-    #mp h1{max-width:88vmin}
+    #mp h1{max-width:88vmin;font-size: min(14vmin,7rem);align-self: center safe;}
     
     h2{
-      font-size:min(12vmin,5rem);
+      font-size:min(12vmin,6rem);
       font-weight:100;
     }
     
@@ -95,20 +96,21 @@
     }
     
     p{
-      font-size:min(6vmin,2rem);
+      font-size:min(5vmin,2.5rem);
       text-align:center;
+      line-height: min(5.5vmin, 2.5rem);
     }
     
     header p{
-      font-size:min(4vmin,1.5rem);
+      font-size:min(4vmin,2.5rem);
       letter-spacing:.2em;
     }
     
     header,section{
       width:100%;
-      background:var(--dark);
+      background:rgba(34, 34, 34, .6);
       border-radius:var(--radius);
-      padding:var(--pad);
+      padding:min(3vmin,5rem);
       margin-bottom:var(--gap);
       box-shadow:var(--shadow);
     }
@@ -117,24 +119,38 @@
       display:flex;
       justify-content:center;
       gap:var(--gap);
-      margin:min(-2vmin,1rem) 0 min(5vmin,1rem);
+      margin:min(-2vmin,1rem) 0 min(3vmin,2rem);
     }
     
     .tab-btn{
       background:#333;
       color:var(--text);
       font-family:var(--font-buyan);
-      font-size:min(7vmin,2rem);
+      font-size:min(5vmin,3rem);
       padding:min(1vmin,1rem);
-      border-radius:min(1vmin,1rem);
-      min-width:min(40vmin,20rem);
+      border-radius:min(2vmin,1rem);
+      min-width:min(30vmin,16rem);
       text-align:center;
       border:0;
       cursor:pointer;
       transition:.3s;
     }
+
+    #art h3, #art h2 {
+      margin: 1vmin 0 -7vmin;
+      font-size: 13vmin;
+      color: #99006669;
+      text-shadow: 0 0 10vmin #000;
+    }
+
+    #art h2 {
+      color: #f6c;
+      margin: -14vmin 0 -1.5vmin 0;
+      font-size: min(12vmin, 7rem);
+      text-shadow: 0 0 2vmin #ff66cc73;
+    }
     
-    .tab-btn:hover{opacity:.8}
+    .tab-btn:hover{transition:.8;}
     .tab-btn.active{background:var(--primary)}
     
     .tab-con{display:none;width:100%}
@@ -235,9 +251,10 @@
     <div class="tabs">
       <button class="tab-btn active" onclick="openTab('striptease',this)">Легенда Стриптиза</button>
       <button class="tab-btn" onclick="openTab('archive',this)">Архив Матвея</button>
+      <button class="tab-btn" onclick="openTab('art',this)">Искусство</button>
     </div>
 
-  <div id="striptease" class="tab-con active">
+    <div id="striptease" class="tab-con active">
       <header>
         <h1>Матвей Легенда Стриптиза</h1>
         <p>Мировая звезда ночных клубов</p>
@@ -293,7 +310,7 @@
       </section>
     </div>
 
-  <div id="archive" class="tab-con">
+    <div id="archive" class="tab-con">
       <header>
         <h1>Архив цитат и противоречий</h1>
       </header>
@@ -333,6 +350,35 @@
         </ul>
       </section>
     </div>
+
+    <div id="art" class="tab-con">
+      <header>
+        <h1>Искусство</h1>
+      </header>
+      
+      <section>
+          <h3>М о я м у з а</h3>
+          <h2>моя муза</h2>
+          <p>Сидит и ждёт в тг мои эксклюзы</p>
+          <h3>М о я м у з а</h3>
+          <h2>моя муза</h2>
+          <p>Мечтает обо мне, как об инклюзе</p>
+          <h3>М о я м у з а</h3>
+          <h2>моя муза</h2>
+          <p>Вдыхает меня, будто я его наркотик</p>
+          <h3>М о я м у з а</h3>
+          <h2>моя муза</h2>
+          <p>Он думает о звёздах и планирует эротик</p>
+          <h3>М о я м у з а</h3>
+          <h2>моя муза</h2>
+          <p>Мне кажется, он лучше всех, но он закрыл мне ротик</p>
+          <h3>М о я м у з а</h3>
+          <h2>моя муза</h2>
+          <p>Он крутой, ведь у него есть мотик</p>
+          <h3>М о я м у з а</h3>
+          <h2>моя муза</h2>
+          <p>Его широкие зрачки и очень белый носик</p>
+      </section>
     
   </div>
  
