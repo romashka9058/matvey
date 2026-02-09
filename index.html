@@ -7,6 +7,7 @@
     <title>Матвей - легенда стриптиза</title>
 
   <style>
+
     @font-face{font-family:buyan;src:url(BuyanBold.woff)}
     @font-face{font-family:bebas;src:url(BebasNeueBold.woff)}
     
@@ -31,10 +32,10 @@
     body{
       font-family:var(--font-bebas);
       color:var(--text);
-      position:relative;
+      /*! position:relative; */
       background:linear-gradient(145deg,#D01EC7,#A01787,#B523C1,#A01799);
-      display:flex;
-      justify-content:center;
+      /*! display:flex; */
+      /*! justify-content:center; */
     }
     
     body::before{
@@ -65,7 +66,7 @@
       padding:min(4vmin,4rem);
     }
     
-    a{color:var(--primary);text-decoration:none}
+    a{color:var(--primary);text-decoration:none;}
     
     h1,h2{
       font-family:var(--font-buyan);
@@ -95,13 +96,13 @@
     }
     
     p{
-      font-size:min(4.5vmin,2.5rem);
+      font-size:min(5vmin,2.5rem);
       text-align:center;
-      line-height: min(4vmin, 2.5rem);
+      line-height: min(4.5vmin, 2.5rem);
     }
     
     header p{
-      font-size:min(4vmin,2.5rem);
+      /*! font-size:min(4vmin,2.5rem); */
       letter-spacing:.2em;
     }
     
@@ -152,20 +153,21 @@
     
     .tab-btn.active{background:var(--primary)}
     
-    .tab-con{display:none;width:100%}
-    .tab-con.active{display:flex;flex-direction:column}
+    .tab-con{display:none;width:100%;}
+    .tab-con.active{display:flex;flex-direction:column;}
     
     .img-grid{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
+      display:grid;
+      /*! flex-wrap:wrap; */
+      /*! justify-content:center; */
       gap:var(--gap);
-      width:100%;
-      margin:min(5vmin,1rem) auto;
+      /*! width:100%; */
+      /*! margin:min(5vmin,1rem) auto; */
+      grid-template-columns: repeat(3, 1fr);
     }
     
     .gallery,.list-img{
-      border-radius:min(4vmin,2rem);
+      border-radius:2vmin;
       box-shadow:0 5px 15px rgba(0,0,0,.2);
       transition:.3s;
     }
@@ -173,13 +175,15 @@
     .gallery,.list-img:hover{transform:scale(1.03)}
     
     .gallery{
-      width:min(40vmin,23rem);
-      height:min(30vmin,25rem);
+      width:27vmin;
+      height:25vmin;
     }
     
     .gallery.large{
       width:100%;
       height:min(59vmin,50rem);
+      /*! grid-template-columns: none; */
+      margin-top: 2vmin;
     }
     
     .list-img{
@@ -188,13 +192,14 @@
       object-fit:contain;
     }
     
-    .facts{padding-left:min(4.5vmin,3rem)}
+    .facts{padding-left:min(4.5vmin,3rem);}
     
     .facts li{
       position:relative;
       padding-left:min(2vmin,3rem);
       font-size:min(6vmin,2.5rem);
       margin-bottom:min(1vmin,2rem);
+      line-height: min(5vmin, 2.5rem);
     }
     
     .qb{
@@ -208,6 +213,7 @@
       font-style:italic;
       text-align:left;
       font-size:min(7vmin,2.5rem);
+      line-height: min(6vmin, 2.5rem);
     }
     
     #mp{
@@ -234,6 +240,7 @@
     }
     
     #mp button:hover{background:var(--primary-hover)}
+
 </style>
 </head>
 <body>
@@ -279,7 +286,7 @@
       <section>
         <h2>Путешествие в Турцию</h2>
         <p>Матвей отправился в Турцию, чтобы встретиться с питерской девой, которая вдохновила его на новые творческие высоты.</p>
-        <div class="img-grid">
+        <div class="img-gridd">
           <img src="p/p10.jpg" loading="lazy" class="gallery large">
         </div>
       </section>
