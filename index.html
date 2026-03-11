@@ -11,8 +11,8 @@
 
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
 button,div{-webkit-tap-highlight-color:transparent}
-html,body{height:100%;overflow:hidden}
-
+html,body{height:100%;}
+.con {scrollbar-width: none; -ms-overflow-style: none;}
 :root{
   --primary:#FF66CC;
   --primary-hover:#FF3399;
@@ -30,7 +30,11 @@ html,body{height:100%;overflow:hidden}
 body{
   font-family:var(--font-bebas);
   color:var(--text);
-  background:linear-gradient(145deg,#D01EC7,#A01787,#B523C1,#A01799);}
+  background:linear-gradient(145deg,#D01EC7,#A01787,#B523C1,#A01799);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
 body::before{
   content:"";
   position:fixed;
@@ -67,16 +71,16 @@ h1,h2{
   text-shadow:0 0 10vmin rgb(205,0,110);} 
 h1{
   font-size:min(20vmin,12rem);
-  line-height: 0.75em;
+  line-height: 0.8em;
   padding-top: 2vmin;}
-#mp h1{max-width:88vmin;font-size: min(14vmin,7rem);align-self: center safe;}
+#mp h1{max-width:95vmin;font-size: min(14vmin,7rem);/*! top: 20vmin; *//*! position: relative; */}
 h2{
   font-size:min(12vmin,6rem);
   font-weight:100;
   line-height: 0.75em;
   margin-bottom: 1vmin;}
 h3{
-  margin-top:-1.25vmin;
+  margin-top:-1vmin;
   font-size:min(8vmin,3rem);
   text-align:center;}
 
@@ -86,6 +90,8 @@ p{
   line-height: min(4.5vmin, 2.5rem);}
 header p {
   letter-spacing:.2em;}
+.m p {
+  line-height: 7.5vmin;}
 
 
 header,section{
@@ -118,7 +124,7 @@ header,section{
 }
 
 #art h3, #art h2 {
-  margin: 1vmin 0 -16vmin;
+  margin: -3vmin 0 -14vmin;
   font-size: 18vmin;
   color: #99006669;
   text-shadow: 0 0 10vmin #000;}
@@ -144,8 +150,8 @@ header,section{
   transition:.3s;}
 .gallery,.list-img:hover{transform:scale(1.03)}
 .gallery{
-  width:27vmin;
-  height:25vmin;}
+  width:min(27vmin, 22.5rem);
+  height:23vmin;}
 .gallery.large{
   width:100%;
   height:min(59vmin,50rem);
@@ -187,18 +193,11 @@ header,section{
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  z-index:1000;}
-#mp button{
-  background:var(--primary);
-  color:var(--text);
-  border:0;
-  font-family:var(--font-bebas);
-  font-size:min(9vmin,5rem);
-  padding:0 min(10vmin,5rem);
-  border-radius:min(2vmin,2rem);
-  cursor:pointer;
-  transition:.3s;}
-#mp button:hover{background:var(--primary-hover)}
+  z-index:1000;
+  height: 65vh;
+  border-radius: 0 0 min(7vmin,5rem) min(7vmin,5rem);
+  top: -800vmin;
+}
 </style>
 </head>
 <body>
@@ -318,7 +317,7 @@ header,section{
         <h1>Искусство</h1>
       </header>
       
-      <section>
+      <section class="m">
           <h3>М о я м у з а</h3>
           <h2>моя муза</h2>
           <p>Сидит и ждёт в тг мои эксклюзы</p>
