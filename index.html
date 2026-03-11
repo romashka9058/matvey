@@ -91,7 +91,7 @@ p{
 header p {
   letter-spacing:.2em;}
 .m p {
-  line-height: 7.5vmin;}
+  line-height: 8.5vmin;}
 
 
 header,section{
@@ -185,6 +185,25 @@ header,section{
   line-height: min(6vmin, 2.5rem);
 }
 
+@keyframes slideUp {
+  from {
+    top: 0;
+  }
+  to {
+    top: -100rem;
+  }
+}
+@keyframes fdaewf {
+  from {
+    position: relative;
+    top: 0;
+  }
+  to {
+    position: relative;
+    top: 50rem;
+  }
+}
+
 #mp{
   position:fixed;
   inset:0;
@@ -196,8 +215,8 @@ header,section{
   z-index:1000;
   height: 65vh;
   border-radius: 0 0 min(7vmin,5rem) min(7vmin,5rem);
-  top: -800vmin;
-}
+  animation: slideUp 4.75s cubic-bezier(.99,.01,.98,.1) forwards;
+  }
 </style>
 </head>
 <body>
@@ -205,8 +224,7 @@ header,section{
 
     <div id="mp">
       <h1>Матвей с этого сайта существует и будет существовать</h1>
-      <h1>где мои сливы, матвей</h1>
-      <button onclick="playMusic()">убить 10 ильясов</button>
+      <h1 style="animation: fdaewf 6s cubic-bezier(.99,.01,.98,.59);">где мои сливы, матвей</h1>
     </div>
 
     <div class="tabs">
@@ -332,7 +350,7 @@ header,section{
           <p>Он думает о звёздах и планирует эротик</p>
           <h3>М о я м у з а</h3>
           <h2>моя муза</h2>
-          <p>Мне кажется, он лучше всех, но он закрыл мне ротик</p>
+          <p>Oн лучше всех, но он закрыл мне ротик</p>
           <h3>М о я м у з а</h3>
           <h2>моя муза</h2>
           <p>Он крутой, ведь у него есть мотик</p>
