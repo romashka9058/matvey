@@ -4,32 +4,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Матвей это легенда ночных клубах о котором должны знать все">
 <link rel="icon" type="image/png" href="./p/p9.jpg">
-<title>Матвей - легенда стриптиза</title>
+<title>Матвей легенда стриптиза</title>
 <style>
 @font-face{font-family:buyan;src:url(BuyanBold.woff)}
 @font-face{font-family:bebas;src:url(BebasNeueBold.woff)}
 
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
 button,div{-webkit-tap-highlight-color:transparent}
-html,body{height:100%;}
+html,body{height:120%;}
 .con {scrollbar-width: none; -ms-overflow-style: none;}
 :root{
-  --primary:#FF66CC;
-  --primary-hover:#FF3399;
+  --primary:#FF7BD3;
   --text:#fff;
-  --dark:rgba(34, 34, 34, .6);
-  --shadow:0 0 1.5vmin #000;
+  --a:min(.5vmin, 2px) outset rgba(229, 48, 255, 0.43);
   --gap:2vmin;
-  --pad:min(3vmin,5rem);
-  --radius:min(2vmin,1.5rem);
   --font-buyan:buyan,sans-serif;
-  --font-bebas:bebas,sans-serif;
 }
 
 
 body{
-  font-family:var(--font-bebas);
-  color:var(--text);
+  font-family:bebas,sans-serif;
+  color: #fff;
   background:linear-gradient(145deg,#D01EC7,#A01787,#B523C1,#A01799);
   display: flex;
   justify-content: center;
@@ -54,11 +49,12 @@ body::after{
 .con{
   position:relative;
   z-index:2;
-  max-width:1230px;
+  max-width:70rem;
   width:100%;
   height:100%;
   overflow-y:auto;
-  padding:min(4vmin,4rem);
+  padding:min(4vmin,2rem);
+  padding-bottom: 45vh;
 }
 
 a{color:var(--primary);text-decoration:none;}
@@ -70,15 +66,17 @@ h1,h2{
   text-align:center;
   text-shadow:0 0 10vmin rgb(205,0,110);} 
 h1{
-  font-size:min(20vmin,12rem);
+  font-size:min(23vmin,10rem);
   line-height: 0.8em;
-  padding-top: 2vmin;}
-#mp h1{max-width:95vmin;font-size: min(14vmin,7rem);/*! top: 20vmin; *//*! position: relative; */}
+  padding-top: 2vmin;
+  letter-spacing: -0.02em;
+}
+#mp h1{max-width:95vmin;font-size: min(14vmin,7rem);}
 h2{
-  font-size:min(12vmin,6rem);
-  font-weight:100;
+  font-size:min(13vmin,8rem);
   line-height: 0.75em;
-  margin-bottom: 1vmin;}
+  transform: scaleY(0.8);
+}
 h3{
   margin-top:-1vmin;
   font-size:min(8vmin,3rem);
@@ -87,20 +85,23 @@ h3{
 p{
   font-size:min(5vmin,2.5rem);
   text-align:center;
-  line-height: min(4.5vmin, 2.5rem);}
+  line-height: min(4.5vmin, 2.2rem);
+  transform: scaley(0.8);
+}
 header p {
   letter-spacing:.2em;}
 .m p {
-  line-height: 8.5vmin;}
+  line-height: 6.5vmin;}
 
 
 header,section{
   width:100%;
   background:rgba(34, 34, 34, .6);
-  border-radius:var(--radius);
+  border-radius:min(2vmin,1.5rem);
   padding:min(3vmin,5rem);
   margin-bottom:var(--gap);
-  box-shadow:var(--shadow);
+  box-shadow:0 0 1.5vmin #000;
+  border: min(.5vmin, 2px) outset rgba(229, 48, 255, 0.43);
 }
 
 .tabs{
@@ -110,12 +111,12 @@ header,section{
   margin:min(-2vmin,1rem) 0 min(3vmin,2rem);}
 .tab-btn{
   background:#333;
-  color:var(--text);
+  color:#fff;
   font-family:var(--font-buyan);
   font-size:min(5vmin,3rem);
   padding:2vmin;
   border-radius:min(2vmin,1rem);
-  min-width:min(30vmin,16rem);
+  min-width:min(27vmin,16rem);
   text-align:center;
   border:0;
   cursor:pointer;
@@ -150,8 +151,10 @@ header,section{
   transition:.3s;}
 .gallery,.list-img:hover{transform:scale(1.03)}
 .gallery{
-  width:min(27vmin, 22.5rem);
-  height:23vmin;}
+  width:min(27.2vmin, 19.3rem);
+  height:25vmin;
+  border: min(.5vmin, 2px) outset rgba(229, 48, 255, 0.43);
+}
 .gallery.large{
   width:100%;
   height:min(59vmin,50rem);
@@ -170,19 +173,7 @@ header,section{
   padding-left:min(2vmin,3rem);
   font-size:min(6vmin,2.5rem);
   margin-bottom:min(1vmin,2rem);
-  line-height: min(5vmin, 2.5rem);
-}
-
-.qb{
-  background:rgba(0,0,0,.3);
-  border-left:min(1vmin,.4rem) solid var(--primary);
-  padding:min(3vmin,1rem);
-  border-radius:min(2vmin,1rem);}
-.qb p{
-  font-style:italic;
-  text-align:left;
-  font-size:min(7vmin,2.5rem);
-  line-height: min(6vmin, 2.5rem);
+  line-height: min(5vmin, 2rem);
 }
 
 @keyframes slideUp {
@@ -216,7 +207,7 @@ header,section{
   height: 65vh;
   border-radius: 0 0 min(7vmin,5rem) min(7vmin,5rem);
   animation: slideUp 4.75s cubic-bezier(.99,.01,.98,.1) forwards;
-  }
+}
 </style>
 </head>
 <body>
@@ -224,29 +215,30 @@ header,section{
 
     <div id="mp">
       <h1>Матвей с этого сайта существует и будет существовать</h1>
-      <h1 style="animation: fdaewf 6s cubic-bezier(.99,.01,.98,.59);">где мои сливы, матвей</h1>
+      <h1 style="animation: fdaewf 8s cubic-bezier(.99,.01,.98,.59);">где мои сливы, матвей</h1>
     </div>
 
     <div class="tabs">
-      <button class="tab-btn active" onclick="openTab('striptease',this)">Легенда Стриптиза</button>
-      <button class="tab-btn" onclick="openTab('archive',this)">Архив Матвея</button>
+      <button class="tab-btn active" onclick="openTab('striptease',this)">Путь</button>
+      <button class="tab-btn" onclick="openTab('archive',this)">Архив</button>
       <button class="tab-btn" onclick="openTab('art',this)">Искусство</button>
     </div>
 
     <div id="striptease" class="tab-con active">
       <header>
         <h1>Матвей Легенда Стриптиза</h1>
-        <p>Мировая звезда ночных клубов</p>
+        <p style="margin-bottom: 0">Мировая звезда ночных клубов</p>
       </header>
       
       <section>
-        <h2>История Матвея</h2>
-        <p>Матвей начинал с небольших клубов, но его талант быстро привлек внимание публики. Его уникальный стиль, харизма и пластика сделали его легендой индустрии.</p>
-        <p>Каждое его выступление - это шоу, сочетающее элементы акробатики, театра и завораживающего танца.</p>
+        <h2>Путь</h2>
+        <p>Хотя Матвей рос с пятью тысячами в неделю, он всегда стремился попробовать всё в этой жизни. Он много экспериментировал, ел, путешествовал, но его не покидала одна маленькая мечта — стать второй самой яркой звездой сцены. И он этого добился</p>
+        <p>Каждое его выступление — это шоу похлеще рамштайна, сочетающее элементы акробатики, театра, оперы, спецэффектов и завораживающего танца</p>
+        <p style="margin-bottom: 0">Матвей не боится трудностей и всегда идёт вперёд, вдохновляя других своим примером. Его путь это история о смелости, таланте и настоящей страсти к своему делу</p>
       </section>
 
       <section>
-        <h2>Фотогалерея</h2>
+        <h2>Галерея</h2>
         <div class="img-grid">
           <img src="p/p1.jpg" loading="lazy" class="gallery">
           <img src="p/p2.jpg" loading="lazy" class="gallery">
@@ -258,18 +250,10 @@ header,section{
       </section>
 
       <section>
-        <h2>Путешествие в Турцию</h2>
-        <p>Матвей отправился в Турцию, чтобы встретиться с питерской девой, которая вдохновила его на новые творческие высоты.</p>
-        <div class="img-gridd">
-          <img src="p/p10.jpg" loading="lazy" class="gallery large">
-        </div>
-      </section>
-
-      <section>
-        <h2>Заработки Матвея</h2>
-        <p>Со своих концертов Матвей заработал больше 3 миллионов рублей, которые сейчас хранятся у его бабушки.</p>
-        <p>"Бабушка лучше знает, как распорядиться деньгами," - говорит Матвей.</p>
-        <p>а если серьёзно, то </p><h3>КАКИЕ БЛЯ 5 ТЫЩ В НЕДЕЛЮ</h3>
+        <h2>Заработки</h2>
+        <p>За годы блистательной карьеры Матвей заработал более 30 миллионов рублей только со своих сольных концертов. Эта сумма не включает доходы от частных выступлений, корпоративных мероприятий, рекламных контрактов и сотрудничества с другими артистами</p>
+        <p>Интересный факт: все свои доходы Матвей доверяет управлению своей бабушке</p>
+        <p style="margin-bottom: 0">Бабушка Матвея инвестирует доходы артиста в мазик. Эта стратегия позволила семье не только сохранить, но и приумножить ввп россии</p>
       </section>
 
       <section>
@@ -279,13 +263,16 @@ header,section{
           <li>Лучший артист года по версии Night Club Awards</li>
           <li>Выступления в крупнейших клубах мира</li>
           <li>Создание собственного элитного шоу-пространства</li>
+          <li>Обладатель титула "Вторая самая пиздатая сучка"</li>
+          <li>Провёл более 500 сольных выступлений</li>
+          <li>Сотрудничал с известными режиссёрами и хореографами</li>
         </ul>
       </section>
 
       <section>
-        <h2>Связаться с Матвеем</h2>
-        <p>Хотите заказать выступление Матвея или задать вопрос? ну нахуя это вам?</p>
-        <p>ТГК: <a href="https://t.me/matveQr">t.me/matveQr</a></p>
+        <h2>Связь</h2>
+        <p style="margin-bottom: 0">Хотите заказать выступление Матвея или задать вопрос? ну нахуя это вам?</p>
+        <p style="margin-bottom: 0">ТГК: <a href="https://t.me/matveQr">t.me/matveQr</a></p>
       </section>
     </div>
 
@@ -295,21 +282,22 @@ header,section{
       </header>
       
       <section>
-        <h2>КТО ТАКОЙ МАТВЕЙ?</h2>
-          <p>Матвейчик уникальный человек. Человек, который умудряется менять свои принципы чаще, чем дышит.</p>
-          <p>Его философия проста: "Сегодня я думаю так, завтра вот так, а завтра вообще не думаю".</p>
+        <h2>кто такой</h2>
+        <p>Матвейчик уникальный человек. Он умудряется менять свои принципы и убеждения чаще, чем дышит</p>
+        <p style="margin-bottom: 0">Матвей мастер переинтерпретирования собственных слов. Каждое его высказывание в контексте того момента, что позволяет ему отрицать буквально всё, что было сказано ранее</p>
       </section>
-      
+
       <section>
-        <h2>ЗОЛОТЫЕ ЦИТАТЫ</h2>
-        <div class="qb">
-          <p>Я никогда не изменяю своим принципам. Кроме тех случаев, когда это выгодно</p>
-        </div>
-        <div class="qb">
-          <p>Это не ложь, это альтернативная интерпретация правды</p>
+        <h2>Путешествие</h2>
+        <p>Матвей отправился в Турцию, чтобы встретиться с питерской девой, которая вдохновила его на новые творческие высоты</p>
+        <p>Матвей впервые попробовал чтото кроме того, что нечто почти белоснежное, калорийное, с текстурой разбавленного герметика и жирнющим, ахуеть каким уловимым ароматом, который делает любое блюдо завершённым шедевром (а лучше даже без самого блюда)</p>
+        <p>Вдохновлённый новыми впечатлениями, он придумал несколько новых номеров для своих выступлений</p>
+        <p style="margin-bottom: 0">Эта поездка стала для Матвея не просто поездкой, но и важным этапом личного роста, который помог ему раскрыть новые грани своего таланта</p>
+        <div class="img-gridd">
+          <img src="p/p10.jpg" loading="lazy" class="gallery large">
         </div>
       </section>
-      
+
       <section>
         <h2>Фоточки</h2>
         <div class="img-grid">
@@ -320,14 +308,16 @@ header,section{
       </section>
       
       <section>
-        <h2>ФАКТЫ О МАТВЕЕ</h2>
+        <h2>факты</h2>
         <ul class="facts">
-          <li>Может согласиться и не согласиться одновременно</li>
-          <li>Рекорд — 3 противоположных мнения за 15 минут</li>
-          <li>Его принципы имеют полураспад 12 часов</li>
-          <li>Уверен, что все его помнят только хорошее</li>
+          <li>Может одновременно согласиться и не согласиться с одним и тем же утверждением это его суперспособность</li>
+          <li>Мировой рекордсмен: 3 противоположных мнения в течение 15 минут на одну и ту же тему</li>
+          <li>Его принципы имеют период полураспада всего 12 часов самые быстро распадающиеся принципы в истории</li>
+          <li>Обладает уникальной способностью забывать свои же слова буквально в момент их произнесения</li>
+          <li>Держит рекорд по количеству раз, когда кто-то говорит о нем: «как он вообще еще не стыдится?»</li>
         </ul>
       </section>
+
     </div>
 
     <div id="art" class="tab-con">
@@ -367,5 +357,7 @@ header,section{
     document.getElementById(id).classList.add('active');
     btn.classList.add('active');};
 </script>
+
+</div>
 </body>
 </html>
