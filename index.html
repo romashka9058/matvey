@@ -50,10 +50,10 @@ body::after{
   position:relative;
   z-index:2;
   max-width:70rem;
-  width:100%;
+  width:98%;
   height:100%;
   overflow-y:auto;
-  padding:min(4vmin,2rem);
+  padding:min(5vmin,2rem);
   padding-bottom: 45vh;
 }
 
@@ -73,9 +73,10 @@ h1{
 }
 #mp h1{max-width:95vmin;font-size: min(14vmin,7rem);}
 h2{
-  font-size:min(13vmin,8rem);
+  font-size:min(14.5vmin,8rem);
   line-height: 0.75em;
   transform: scaleY(0.8);
+  text-shadow: 0 0 5vmin rgb(205,0,110);
 }
 h3{
   margin-top:-1vmin;
@@ -83,10 +84,10 @@ h3{
   text-align:center;}
 
 p{
-  font-size:min(5vmin,2.5rem);
+  font-size:min(5.5vmin,2.5rem);
   text-align:center;
   line-height: min(4.5vmin, 2.2rem);
-  transform: scaley(0.8);
+  transform: scaley(0.9);
 }
 header p {
   letter-spacing:.2em;}
@@ -108,7 +109,7 @@ header,section{
   display:flex;
   justify-content:center;
   gap:var(--gap);
-  margin:min(-2vmin,1rem) 0 min(3vmin,2rem);}
+  margin:0 0 min(3vmin,2rem);}
 .tab-btn{
   background:#333;
   color:#fff;
@@ -125,8 +126,8 @@ header,section{
 }
 
 #art h3, #art h2 {
-  margin: -3vmin 0 -14vmin;
-  font-size: 18vmin;
+  margin: -2vmin 0 -14vmin;
+  font-size: min(18vmin, 14rem);
   color: #99006669;
   text-shadow: 0 0 10vmin #000;}
 #art h2 {
@@ -171,7 +172,7 @@ header,section{
 .facts li{
   position:relative;
   padding-left:min(2vmin,3rem);
-  font-size:min(6vmin,2.5rem);
+  font-size:min(5.5vmin,2.5rem);
   margin-bottom:min(1vmin,2rem);
   line-height: min(5vmin, 2rem);
 }
@@ -215,7 +216,7 @@ header,section{
 
     <div id="mp">
       <h1>Матвей с этого сайта существует и будет существовать</h1>
-      <h1 style="animation: fdaewf 8s cubic-bezier(.99,.01,.98,.59);">где мои сливы, матвей</h1>
+      <h1 style="animation: fdaewf 8s cubic-bezier(.99,.01,.98,.59); will-change: transform;">где мои сливы, матвей</h1>
     </div>
 
     <div class="tabs">
