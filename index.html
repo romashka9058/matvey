@@ -84,13 +84,15 @@ h3{
   text-align:center;}
 
 p{
-  font-size:min(6vmin,2.5rem);
+  font-size:min(5.5vmin,2.5rem);
   text-align:center;
   line-height: min(4.5vmin, 2.5rem);
   transform: scaley(0.9);
 }
 header p {
-  letter-spacing:.2em;}
+  letter-spacing:.2em;
+  transform: scalex(0.8);
+}
 .m p {
   line-height: 6.5vmin;}
 
@@ -158,8 +160,11 @@ header,section{
 }
 .gallery.large{
   width:100%;
-  height:min(59vmin,50rem);
-  margin-top: 2vmin;}
+  height:min(43vmin,50rem);
+}
+.img-gridd {
+  margin: 1vmin 3vmin;
+}
 
 
 .list-img{
@@ -220,8 +225,8 @@ header,section{
     </div>
 
     <div class="tabs">
-      <button class="tab-btn active" onclick="openTab('striptease',this)">Путь</button>
-      <button class="tab-btn" onclick="openTab('archive',this)">Архив</button>
+      <button class="tab-btn active" onclick="openTab('striptease',this)">П у т ь</button>
+      <button class="tab-btn" onclick="openTab('archive',this)">А р х и в</button>
       <button class="tab-btn" onclick="openTab('art',this)">Искусство</button>
     </div>
 
