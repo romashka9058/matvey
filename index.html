@@ -6,6 +6,7 @@
 <link rel="icon" type="image/png" href="./p/p9.jpg">
 <title>Матвей легенда стриптиза</title>
 <style>
+
 @font-face{font-family:buyan;src:url(BuyanBold.woff)}
 @font-face{font-family:bebas;src:url(BebasNeueBold.woff)}
 
@@ -49,7 +50,7 @@ body::after{
 .con{
   position:relative;
   z-index:2;
-  max-width:70rem;
+  max-width:100rem;
   width:99.5%;
   height:100%;
   overflow-y:auto;
@@ -66,14 +67,14 @@ h1,h2{
   text-align:center;
   text-shadow:0 0 10vmin rgb(205,0,110);} 
 h1{
-  font-size:min(22.5vmin,10rem);
+  font-size:min(22.5vmin,15rem);
   line-height: 0.8em;
-  padding-top: 2vmin;
+  padding-top: 1vmin;
   letter-spacing: -0.02em;
 }
 #mp h1{max-width:95vmin;font-size: min(14vmin,7rem);}
 h2{
-  font-size:min(15vmin,8rem);
+  font-size:min(15vmin,11rem);
   line-height: 0.75em;
   transform: scaleY(0.8);
   text-shadow: 0 0 7.5vmin rgb(205,0,110);
@@ -84,7 +85,7 @@ h3{
   text-align:center;}
 
 p{
-  font-size:min(5.5vmin,2.5rem);
+  font-size:min(5.5vmin,3rem);
   text-align:center;
   line-height: min(4.75vmin, 2.5rem);
   transform: scaley(0.9);
@@ -94,7 +95,9 @@ header p {
   transform: scalex(0.8);
 }
 .m p {
-  line-height: 7vmin;}
+  line-height: 7vmin;
+  font-size: min(5.5vmin,3rem);
+}
 
 
 header,section{
@@ -128,14 +131,14 @@ header,section{
 }
 
 #art h3, #art h2 {
-  margin: -2vmin 0 -14vmin;
-  font-size: min(18vmin, 14rem);
+  margin: -3vmin 0 max(-14vmin, -12rem);
+  font-size: min(18vmin, 15rem);
   color: #99006669;
   text-shadow: 0 0 10vmin #000;}
 #art h2 {
   color: #f6c;
-  margin: 0 0 -2.5vmin;
-  font-size: min(14vmin, 8rem);
+  margin: 0 0 -3vmin;
+  font-size: min(14vmin, 11rem);
   text-shadow: 0 0 2vmin #ff66cc73;
 }
 
@@ -154,8 +157,8 @@ header,section{
   transition:.3s;}
 .gallery,.list-img:hover{transform:scale(1.03)}
 .gallery{
-  width:min(25.7vmin, 19.3rem);
-  height:min(27vmin, 20rem);
+  width:100%;
+  /*! height:auto; */
   border: min(.5vmin, 2px) outset rgba(229, 48, 255, 0.43);
 }
 .gallery.large{
@@ -214,6 +217,7 @@ header,section{
   border-radius: 0 0 min(7vmin,5rem) min(7vmin,5rem);
   animation: slideUp 4.75s cubic-bezier(.99,.01,.98,.1) forwards;
 }
+
 </style>
 </head>
 <body>
